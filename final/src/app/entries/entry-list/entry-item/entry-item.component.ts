@@ -1,6 +1,7 @@
 import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Entry } from '../../entry.model';
+import { EntryService } from '../../entry.service';
 
 @Component({
   selector: 'app-entry-item',
@@ -11,14 +12,15 @@ export class EntryItemComponent implements OnInit {
 
   @Input()
   entry!: Entry;
-  @Output() entrySelected = new EventEmitter<void>();
+  //@Output() entrySelected = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private entryService: EntryService) { }
 
   ngOnInit(): void {
   }
   onSelected() {
-    this.entrySelected.emit();
+   // this.entrySelected.emit();
+   this.entryService.entrySelected.emit(this.entry);
   }
 
 }
