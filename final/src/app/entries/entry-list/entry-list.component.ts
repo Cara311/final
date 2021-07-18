@@ -11,7 +11,8 @@ import { EntryService } from '../entry.service';
 })
 export class EntryListComponent implements OnInit {
   //@Output() entryWasSelected = new EventEmitter<Entry>();
-  entries: Entry[] = [];
+  //@Output() entryWasSelected = new EventEmitter<Entry>();
+  entries!: Entry[];
   subscription!: Subscription;
 
 
