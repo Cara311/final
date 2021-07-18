@@ -17,13 +17,25 @@
       <div class="btn-group">
         <button
           type="button"
+          class="btn btn-success">
+          <a style="cursor: pointer;" (click)="onEditEntry()">Edit Entry</a>
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning">
+          <a style="cursor: pointer;" (click)="onEditEntry()">Delete Entry</a>
+        </button>
+
+
+       <!--  <button
+          type="button"
           class="btn btn-primary dropdown-toggle">
           Manage Entry <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#">Edit Entry</a></li>
-          <li><a href="#">Delete Entry</a></li>
-        </ul>
+          <li><a style="cursor: pointer;" (click)="onEditEntry()">Edit Entry</a></li>
+          <li><a>Delete Entry</a></li>
+        </ul> -->
       </div>
     </div>
   </div>

@@ -3,11 +3,12 @@
       <app-entry-list></app-entry-list>
     </div>
     <div class="col-md-7">
-      <app-entry-detail
+      <!-- <app-entry-detail
       *ngIf="selectedEntry; else infoText"
       [entry]="selectedEntry"></app-entry-detail>
       <ng-template #infoText>
         <p>Please select an entry!</p>
-      </ng-template>
+      </ng-template> -->
+      <router-outlet></router-outlet>
     </div>
   </div>

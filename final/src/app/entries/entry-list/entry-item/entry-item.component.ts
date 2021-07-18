@@ -12,15 +12,17 @@ export class EntryItemComponent implements OnInit {
 
   @Input()
   entry!: Entry;
+  @Input()
+  index!: number;
   //@Output() entrySelected = new EventEmitter<void>();
 
-  constructor(private entryService: EntryService) { }
+  //constructor(private entryService: EntryService) { }
 
   ngOnInit(): void {
   }
-  onSelected() {
+ /*  onSelected() {
    // this.entrySelected.emit();
    this.entryService.entrySelected.emit(this.entry);
-  }
+  } */
 
 }

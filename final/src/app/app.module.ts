@@ -7,6 +7,10 @@ import { EntriesComponent } from './entries/entries.component';
 import { EntryListComponent } from './entries/entry-list/entry-list.component';
 import { EntryDetailComponent } from './entries/entry-detail/entry-detail.component';
 import { EntryItemComponent } from './entries/entry-list/entry-item/entry-item.component';
+import { AppRoutingModule } from './entries/app-routing.module';
+import { EntryStartComponent } from './entries/entry-start/entry-start.component';
+import { EntryEditComponent } from './entries/entry-edit/entry-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +19,15 @@ import { EntryItemComponent } from './entries/entry-list/entry-item/entry-item.c
     EntriesComponent,
     EntryListComponent,
     EntryDetailComponent,
-    EntryItemComponent
+    EntryItemComponent,
+    EntryStartComponent,
+    EntryEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

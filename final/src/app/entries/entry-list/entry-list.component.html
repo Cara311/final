@@ -1,14 +1,15 @@
 <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-success">New Entry</button>
+      <button class="btn btn-success" (click)="onNewEntry()">New Entry</button>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-xs-12">
       <app-entry-item
-      *ngFor="let entryEl of entries"
+      *ngFor="let entryEl of entries; let i = index"
       [entry]="entryEl"
+      [index] = "i"
      ></app-entry-item>
       <app-entry-item></app-entry-item>
     </div>
