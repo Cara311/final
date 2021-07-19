@@ -9,16 +9,17 @@ import { EntryService } from './entry.service';
   providers: [EntryService]
 })
 export class EntriesComponent implements OnInit {
-  selectedEntry: Entry | undefined;
+  //selectedEntry: Entry | undefined;
 
-  constructor(private entryService: EntryService) { }
+  //constructor(private entryService: EntryService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.entryService.entrySelected.subscribe(
+    /* this.entryService.entrySelected.subscribe(
       (entry: Entry) => {
         this.selectedEntry = entry;
       }
-    )
+    ) */
 
   }
 
