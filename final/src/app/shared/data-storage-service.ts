@@ -25,22 +25,10 @@ export class DataStorageService {
     return this.http
       .get<Entry[]>(
         'https://final-6cb13-default-rtdb.firebaseio.com/entries.json'
-      ).subscribe(entries => {
-          console.log(entries);
+       ).subscribe(entries => {
+           console.log(entries);
           this.entryService.setEntries(entries);
-      })
-       /* .pipe(
-        map(entries => {
-          return entries.map(entry => {
-            return {
-              ...entry
-              //ingredients: recipe.ingredients ? recipe.ingredients : []
-            };
-          });
-        }),
-        tap(entries => {
-          this.entryService.setEntries(entries);
-        }) 
-      ) */
+   })
+      
   }
 }

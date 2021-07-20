@@ -13,21 +13,21 @@ import { DataStorageService } from '../../shared/data-storage-service';
 export class EntryListComponent implements OnInit, OnDestroy {
   //@Output() entryWasSelected = new EventEmitter<Entry>();
   //@Output() entryWasSelected = new EventEmitter<Entry>();
-  entries!: Entry[];
-  subscription!: Subscription;
+  entries: Entry[];
+  subscription: Subscription;
 
 
   constructor(private entryService: EntryService, private router: Router,
     private route: ActivatedRoute, private dataStorageService: DataStorageService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.subscription = this.entryService.entriesChanged
       .subscribe(
         (entries: Entry[]) => {
           this.entries = entries;
         }
       );
-    this.entries = this.entryService.getEntries();
+    this.entries = this.entryService.getEntries(); 
   }
  /* onEntrySelected(entry: Entry) {
     this.entryWasSelected.emit(entry);
@@ -38,15 +38,6 @@ export class EntryListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-
-
-  onSaveData() {
-    this.dataStorageService.storeEntries();
-  }
-
-  onFetchData() {
-    this.dataStorageService.fetchEntries()//.subscribe();
   }
 
   
