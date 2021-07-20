@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { EntriesComponent } from './entries/entries.component';
@@ -12,6 +12,7 @@ import { EntryStartComponent } from './entries/entry-start/entry-start.component
 import { EntryEditComponent } from './entries/entry-edit/entry-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EntryService } from './entries/entry.service';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EntryService } from './entries/entry.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [EntryService],

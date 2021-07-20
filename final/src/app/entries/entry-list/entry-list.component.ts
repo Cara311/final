@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Entry } from '../entry.model';
 import { EntryService } from '../entry.service';
+import { DataStorageService } from '../../shared/data-storage-service';
 
 @Component({
   selector: 'app-entry-list',
@@ -17,7 +18,7 @@ export class EntryListComponent implements OnInit, OnDestroy {
 
 
   constructor(private entryService: EntryService, private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute, private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
     this.subscription = this.entryService.entriesChanged
@@ -39,4 +40,16 @@ export class EntryListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+
+  onSaveData() {
+    this.dataStorageService.storeEntries();
+  }
+
+  onFetchData() {
+    this.dataStorageService.fetchEntries()//.subscribe();
+  }
+
+  
+
 }
+
