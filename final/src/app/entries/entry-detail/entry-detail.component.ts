@@ -33,4 +33,9 @@ export class EntryDetailComponent implements OnInit {
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
+  onDeleteEntry() {
+    this.entryService.deleteEntry(this.id);
+    this.router.navigate(['/entries']);
+  }
+
 }

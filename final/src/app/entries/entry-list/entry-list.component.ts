@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Entry } from '../entry.model';
@@ -9,7 +9,7 @@ import { EntryService } from '../entry.service';
   templateUrl: './entry-list.component.html',
   styleUrls: ['./entry-list.component.css']
 })
-export class EntryListComponent implements OnInit {
+export class EntryListComponent implements OnInit, OnDestroy {
   //@Output() entryWasSelected = new EventEmitter<Entry>();
   //@Output() entryWasSelected = new EventEmitter<Entry>();
   entries!: Entry[];

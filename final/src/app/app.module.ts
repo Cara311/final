@@ -11,6 +11,7 @@ import { AppRoutingModule } from './entries/app-routing.module';
 import { EntryStartComponent } from './entries/entry-start/entry-start.component';
 import { EntryEditComponent } from './entries/entry-edit/entry-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EntryService } from './entries/entry.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EntryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
